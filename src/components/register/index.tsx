@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form'
 import { useCreateUserMutation } from '../../services'
 import { useCallback } from 'react'
 import { EPartnerId } from '../../services/data-provider/constants'
+import Spinner from '../Svg/Spinner'
 
 function Register({ partnerId }: { partnerId: EPartnerId }) {
   const form = useForm({
@@ -52,6 +53,7 @@ function Register({ partnerId }: { partnerId: EPartnerId }) {
             id='name'
             type='text'
             placeholder='Name'
+            disabled={isSubmitting}
             className='block mt-2 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40'
             {...register('name', { required: true })}
           />
@@ -65,6 +67,7 @@ function Register({ partnerId }: { partnerId: EPartnerId }) {
             id='phone'
             type='tel'
             placeholder='Phone Number'
+            disabled={isSubmitting}
             className='block mt-2 w-full placeholder-gray-400/70 rounded-lg border border-gray-200 bg-white px-5 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40'
             {...register('phoneNumber', { required: true })}
           />
@@ -82,7 +85,7 @@ function Register({ partnerId }: { partnerId: EPartnerId }) {
             disabled={isSubmitButtonDisabled}
             onClick={onSubmit}
           >
-            Register
+            {isSubmitting ? <Spinner className='mr-2 size-4' /> : <>Register</>}
           </button>
         </div>
       </form>
