@@ -1,5 +1,5 @@
 import { createRootRoute, Outlet, useLocation } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+// import { TanStackRouterDevtools } from '@tanstack/router-devtools'
 import { SideMenu } from '../components/section/SideMenu'
 
 export const Route = createRootRoute({
@@ -16,7 +16,7 @@ const Root = () => {
         {isAdminRoute ? <SideMenu /> : null}
         <Outlet />
       </div>
-      <TanStackRouterDevtools />
+      {/* <TanStackRouterDevtools /> */}
     </>
   )
 }
