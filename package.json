@@ -25,7 +25,8 @@
     "react-hook-form": "^7.51.5",
     "react-select": "^5.8.0",
     "react-window": "^1.8.10",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "^2.3.0",
+    "vercel": "^34.3.0"
   },
   "devDependencies": {
     "@tanstack/router-devtools": "^1.35.3",
