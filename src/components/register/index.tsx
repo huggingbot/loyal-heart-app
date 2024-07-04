@@ -3,6 +3,7 @@ import { useCreateUserMutation } from '../../services'
 import { useCallback } from 'react'
 import { EPartnerId } from '../../services/data-provider/constants'
 import Spinner from '../Svg/Spinner'
+import RoyalHeartIcon from '../Svg/RoyalHeartIcon'
 
 function Register({ partnerId }: { partnerId: EPartnerId }) {
   const form = useForm({
@@ -44,7 +45,8 @@ function Register({ partnerId }: { partnerId: EPartnerId }) {
 
   return (
     <div className='flex flex-col w-full justify-center items-center'>
-      <form className='mx-auto mb-0 mt-8 max-w-md space-y-4'>
+      {partnerId === EPartnerId.RoyalHeart && <RoyalHeartIcon />}
+      <form className='mx-auto mb-0 mt-8 max-w-md'>
         <div>
           <label htmlFor='name' className='block text-sm text-gray-500'>
             Name
@@ -60,7 +62,7 @@ function Register({ partnerId }: { partnerId: EPartnerId }) {
         </div>
 
         <div>
-          <label htmlFor='phone' className='block text-sm text-gray-500'>
+          <label htmlFor='phone' className='block mt-6 text-sm text-gray-500'>
             Phone
           </label>
           <input
@@ -73,7 +75,7 @@ function Register({ partnerId }: { partnerId: EPartnerId }) {
           />
         </div>
 
-        <div className='mt-8 flex justify-center'>
+        <div className='mt-12 flex justify-center'>
           <button
             type='submit'
             className={`inline-block rounded border  px-12 py-3 text-sm font-medium 
